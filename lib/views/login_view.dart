@@ -38,13 +38,13 @@ class LoginView extends StatelessWidget {
 
                   SizedBox(height: MyUtils.porcientoH(5.0)),
 
-                  CustomButton(
+                  (gx.isLoading)
+                  ? const CircularProgressIndicator()
+                  : CustomButton(
                     widthButton: MyUtils.porcientoW(15.0),
                     textButton: (gx.isLogin) ? 'Iniciar sesión' : 'Registrarse',
                     colorButton: (gx.isLogin) ? Colors.teal : Colors.purple,
-                    onClick: () {
-                      print('Iniciar sesión');
-                    }
+                    onClick: () => gx.validateForm()
                   ),
 
                   SizedBox(height: MyUtils.porcientoH(12.0)),

@@ -6,7 +6,7 @@ import 'package:test_logrant/widgets/shared/custom_simple_text.dart';
 
 class CustomSimpleDialog {
 
-  static void alert(String title, String subtitle, {bool dismissible = false, Function? function}) {
+  static void alert(String title, String subtitle, {required bool isLogin, void Function()? onAccept}) {
     Get.dialog(
       AlertDialog(
         backgroundColor: Colors.white,
@@ -17,27 +17,27 @@ class CustomSimpleDialog {
             CSimpleTxt(
               fTxt: title,
               fSize: 17.0,
-              fColor: Colors.orange,
+              fColor: (isLogin) ? Colors.teal : Colors.purple
             ),
             const SizedBox(height: 20.0),
             CSimpleTxt(
               fTxt: subtitle,
               fSize: 16.0,
               fAlign: TextAlign.center,
-              fColor: Colors.orange,
+              fColor: (isLogin) ? Colors.teal : Colors.purple,
             ),
             const SizedBox(height: 20.0),
             CustomButton(
               textButton: 'Aceptar',
-              colorButton: Colors.red,
-              onClick: () {
-                print('buton pressed');
-              },
+              colorButton: (isLogin) ? Colors.teal : Colors.purple,
+              onClick: (onAccept != null)
+                ? () => onAccept()
+                : () => Get.back()
             )
           ]
         )
       ),
-      barrierDismissible: dismissible
+      barrierDismissible: false
     );
   }
 

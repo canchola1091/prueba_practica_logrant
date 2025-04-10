@@ -16,17 +16,15 @@ class LoginServices {
       );
       resultLogin['success'] = true;
       resultLogin['message'] = 'Usuario logueado correctamente.';
-      MyUtils.msgerror("Result: $resultLogin");
     } catch (e) {
       resultLogin['success'] = false;
       resultLogin['message'] = 'Error al iniciar sesión.';
-      MyUtils.msgerror("Result: $resultLogin");
       MyUtils.msgerror("Error: $e");
     }
     return resultLogin;
   }
 
-  Future<Map<String, dynamic>> registerServices(String email, String password) async {
+  static Future<Map<String, dynamic>> registerService(String email, String password) async {
     Map<String, dynamic> resultRegister = {
       'success': false,
       'message': '',
@@ -38,7 +36,7 @@ class LoginServices {
       );
       resultRegister['success'] = true;
       resultRegister['message'] = 'Usuario registrado correctamente.';
-      MyUtils.msgerror("Result: $resultRegister");
+      MyUtils.msginfo("Result: $resultRegister");
     } catch (e) {
       resultRegister['success'] = false;
       resultRegister['message'] = 'Error al realizar registro.';
