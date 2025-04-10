@@ -1,0 +1,17 @@
+
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:test_logrant/views/login_view.dart';
+import 'package:test_logrant/views/people_view.dart';
+
+class RoutesApp {
+  static List<GetPage> routes = [
+    GetPage(
+      name: '/login_view',
+      page: () => const LoginView()
+    ),
+    GetPage(
+      name: '/people_view',
+      page: () => const PeopleView()
+    ),
+  ];
+}

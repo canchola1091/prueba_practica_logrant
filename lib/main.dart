@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 //* IMPORTACIONES PROPIAS
 import 'package:test_logrant/data/global_preferences.dart';
-import 'package:test_logrant/views/login_view.dart';
+import 'package:test_logrant/routes/routes_app.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
       ),
-      home: const LoginView()
+      initialRoute: '/login_view',
+      getPages: RoutesApp.routes
     );
   }
 }
