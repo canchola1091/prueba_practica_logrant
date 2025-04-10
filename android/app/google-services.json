@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "77377823220",
+    "project_id": "test-logrant",
+    "storage_bucket": "test-logrant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77377823220:android:9e47dd4557300966d259a1",
+        "android_client_info": {
+          "package_name": "com.example.test_logrant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFJHmf4Ka4OkZKNt8mwOwnBd03aqT2L1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
