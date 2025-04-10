@@ -1,16 +1,19 @@
 //* IMPORTACIONES PROPIAS DE FLUTTER
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 //* IMPORTACIONES DE LIBRERIAS
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-//* IMPORTACIONES DE VISTAS
+//* IMPORTACIONES PROPIAS
+import 'package:test_logrant/data/global_preferences.dart';
 import 'package:test_logrant/views/login_view.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final globalPrefs = GlobalPreferences();
+  await globalPrefs.initVarsPermanentes();
   runApp(const MyApp());
 }
 
