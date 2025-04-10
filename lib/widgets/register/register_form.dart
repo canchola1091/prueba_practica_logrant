@@ -34,6 +34,8 @@ class RegisterForm extends StatelessWidget {
                   ctrl:  gx.phoneCtrl,
                   label: 'Teléfono',
                   isLogin: false,
+                  maxCaracters: 10,
+                  onlyNumbers: true,
                   inputType: TextInputType.phone,
                   validation: (value) => Validations.validRequiredAndLength(value!, 10),
                 ),
@@ -50,12 +52,12 @@ class RegisterForm extends StatelessWidget {
                   ctrl:  gx.passwordRegCtrl,
                   label: 'Contraseña',
                   isLogin: false,
-                  isPassword: gx.showPasswordRegister,
+                  isPassword: !gx.showPasswordRegister,
                   validation: (value) => Validations.validRequiredAndLength(value!, 8),
                   iconSuffix: IconButton(
                     onPressed: () => gx.changeViewPasswordRegister(),
                     icon: Icon(
-                      (gx.showPasswordRegister)
+                      (!gx.showPasswordRegister)
                       ? Icons.visibility
                       : Icons.visibility_off,
                       color: Colors.purple,

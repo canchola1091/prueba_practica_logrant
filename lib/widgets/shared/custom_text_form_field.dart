@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:test_logrant/utils/my_utils.dart';
 
 class CustomTextFormField extends StatelessWidget {
 
@@ -10,6 +11,8 @@ class CustomTextFormField extends StatelessWidget {
   final String label;
   final bool isPassword;
   final bool isLogin;
+  final bool onlyNumbers;
+  final int? maxCaracters;
   final Widget? iconSuffix;
   
   const CustomTextFormField({
@@ -21,6 +24,8 @@ class CustomTextFormField extends StatelessWidget {
     this.capitalization = TextCapitalization.none,
     this.isPassword = false,
     this.isLogin = false,
+    this.onlyNumbers = false,
+    this.maxCaracters,
     this.iconSuffix,
   });
 
@@ -32,6 +37,11 @@ class CustomTextFormField extends StatelessWidget {
       validator: validation,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: isPassword,
+      maxLength: (maxCaracters != null) ? maxCaracters : null,
+      buildCounter: (_, {required currentLength, required isFocused, required maxLength}) => null, // Oculta el contador de caracteres
+      inputFormatters: (onlyNumbers)
+      ? MyUtils.formatOnlyNumbers()
+      : null,
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(color: (isLogin) ? Colors.teal : Colors.purple),

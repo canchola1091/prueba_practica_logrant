@@ -47,7 +47,7 @@ class LoginView extends StatelessWidget {
                     }
                   ),
 
-                  SizedBox(height: MyUtils.porcientoH(15.0)),
+                  SizedBox(height: MyUtils.porcientoH(12.0)),
 
                   (gx.isLogin)
                   ? _registerTextButton(gx.chanceViewLoginRegister)

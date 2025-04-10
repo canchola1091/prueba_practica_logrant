@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 
@@ -64,5 +65,12 @@ class MyUtils {
     return "${date.day} de ${month[date.month-1]} de ${date.year} - ${date.hour}:${date.minute} hrs.";
   }
 
+  static List<TextInputFormatter> formatOnlyNumbers() => [
+    FilteringTextInputFormatter.digitsOnly
+  ];
+
+  static List<TextInputFormatter> formatOnlyLetters() => [
+    FilteringTextInputFormatter.allow(RegExp(r"[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]"))
+  ];
 
 }
