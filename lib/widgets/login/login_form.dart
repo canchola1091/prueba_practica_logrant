@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 import 'package:test_logrant/controllers/login_controller.dart';
+import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/validations/validations.dart';
 import 'package:test_logrant/widgets/shared/custom_text_form_field.dart';
 
@@ -28,6 +29,7 @@ class LoginForm extends StatelessWidget {
                   inputType: TextInputType.emailAddress,
                   validation: (value) => Validations.validEmail(value!),
                 ),
+                SizedBox(height: MyUtils.porcientoH(3.0)),
                 CustomTextFormField(
                   ctrl:  gx.passwordCtrl,
                   label: 'Contraseña',
@@ -43,16 +45,10 @@ class LoginForm extends StatelessWidget {
                       color: Colors.teal,
                     )
                   )
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    gx.validateLoginForm();
-                  },
-                  child: Text('Iniciar sesión'),
                 )
               ]
             )
-          ),
+          )
         );
       }
     );

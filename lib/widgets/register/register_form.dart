@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import 'package:test_logrant/controllers/login_controller.dart';
+import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/validations/validations.dart';
 import 'package:test_logrant/widgets/shared/custom_text_form_field.dart';
 
@@ -28,6 +29,7 @@ class RegisterForm extends StatelessWidget {
                   capitalization: TextCapitalization.words,
                   validation: (value) => Validations.validNames(value!),
                 ),
+                SizedBox(height: MyUtils.porcientoH(3.0)),
                 CustomTextFormField(
                   ctrl:  gx.phoneCtrl,
                   label: 'Teléfono',
@@ -35,6 +37,7 @@ class RegisterForm extends StatelessWidget {
                   inputType: TextInputType.phone,
                   validation: (value) => Validations.validRequiredAndLength(value!, 10),
                 ),
+                SizedBox(height: MyUtils.porcientoH(3.0)),
                 CustomTextFormField(
                   ctrl:  gx.emailRegCtrl,
                   label: 'Correo electrónico',
@@ -42,6 +45,7 @@ class RegisterForm extends StatelessWidget {
                   inputType: TextInputType.emailAddress,
                   validation: (value) => Validations.validEmail(value!),
                 ),
+                SizedBox(height: MyUtils.porcientoH(3.0)),
                 CustomTextFormField(
                   ctrl:  gx.passwordRegCtrl,
                   label: 'Contraseña',
@@ -57,14 +61,10 @@ class RegisterForm extends StatelessWidget {
                       color: Colors.purple,
                     )
                   )
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Registrar'),
                 )
               ]
             )
-          ),
+          )
         );
       }
     );
