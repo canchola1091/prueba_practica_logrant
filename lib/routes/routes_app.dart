@@ -1,5 +1,6 @@
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:test_logrant/views/favorite_person_view.dart';
 import 'package:test_logrant/views/login_view.dart';
 import 'package:test_logrant/views/people_view.dart';
 
@@ -12,6 +13,10 @@ class RoutesApp {
     GetPage(
       name: '/people_view',
       page: () => const PeopleView()
+    ),
+    GetPage(
+      name: '/favorite_person_view',
+      page: () => const FavoritePersonView()
     ),
   ];
 }
