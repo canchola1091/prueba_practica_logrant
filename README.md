@@ -5,6 +5,11 @@ Prueba Tecnica Logrant
 ## Getting Started
 
 Aplicación creada con Flutter version 3.27.1
+Link repositorio: https://github.com/canchola1091/prueba_practica_logrant.git
+Despues de clonar el repositorio, posicionarse en la rama develop, para compilar correr el comando
+flutter pub get
+flutter run o Start Debugging (Click derecho del mouse estando posicionado en el archivo main.dart)
+
 
 Instrucciones
 
