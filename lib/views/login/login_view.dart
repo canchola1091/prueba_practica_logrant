@@ -1,4 +1,5 @@
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -25,35 +26,37 @@ class LoginView extends StatelessWidget {
           child: Scaffold(
             body: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  header(
-                    (gx.isLogin) ? 'Inicio de sesión' : 'Registro',
-                    gx.isLogin
-                  ),
-                  SizedBox(height: MyUtils.porcientoH(5.0)),
-                  (gx.isLogin)
-                  ? const LoginForm()
-                  : const RegisterForm(),
-
-                  SizedBox(height: MyUtils.porcientoH(5.0)),
-
-                  (gx.isLoading)
-                  ? const CircularProgressIndicator()
-                  : CustomButton(
-                    widthButton: MyUtils.porcientoW(15.0),
-                    textButton: (gx.isLogin) ? 'Iniciar sesión' : 'Registrarse',
-                    colorButton: (gx.isLogin) ? Colors.teal : Colors.purple,
-                    onClick: () => gx.validateForm()
-                  ),
-
-                  SizedBox(height: MyUtils.porcientoH(12.0)),
-
-                  (gx.isLogin)
-                  ? _registerTextButton(gx.chanceViewLoginRegister)
-                  : _loginTextButton(gx.chanceViewLoginRegister),
-
-                ]
+              child: FadeInDown(
+                child: Column(
+                  children: [
+                    header(
+                      (gx.isLogin) ? 'Inicio de sesión' : 'Registro',
+                      gx.isLogin
+                    ),
+                    SizedBox(height: MyUtils.porcientoH(5.0)),
+                    (gx.isLogin)
+                    ? const LoginForm()
+                    : const RegisterForm(),
+                
+                    SizedBox(height: MyUtils.porcientoH(5.0)),
+                
+                    (gx.isLoading)
+                    ? const CircularProgressIndicator()
+                    : CustomButton(
+                      widthButton: MyUtils.porcientoW(15.0),
+                      textButton: (gx.isLogin) ? 'Iniciar sesión' : 'Registrarse',
+                      colorButton: (gx.isLogin) ? Colors.teal : Colors.purple,
+                      onClick: () => gx.validateForm()
+                    ),
+                
+                    SizedBox(height: MyUtils.porcientoH(12.0)),
+                
+                    (gx.isLogin)
+                    ? _registerTextButton(gx.chanceViewLoginRegister)
+                    : _loginTextButton(gx.chanceViewLoginRegister),
+                
+                  ]
+                ),
               )
             )
           )
