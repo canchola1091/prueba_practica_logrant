@@ -28,12 +28,21 @@ class PeopleList extends StatelessWidget {
               return FadeInLeft(
                 delay: Duration(milliseconds: index * 50),
                 child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        (isViewList)
-                        ? gx.favoritePersonList[index].avatar
-                        : gx.peopleList[index].avatar
-                      ),
+                  onTap: () => gx.goTodetailPerson(
+                    context,
+                    (isViewList) ? gx.favoritePersonList[index] : gx.peopleList[index]
+                  ),
+                  leading: Hero(
+                    tag: (isViewList)
+                      ? gx.favoritePersonList[index].avatar
+                      : gx.peopleList[index].avatar,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          (isViewList)
+                          ? gx.favoritePersonList[index].avatar
+                          : gx.peopleList[index].avatar
+                        ),
+                    ),
                   ),
                   title: Text(
                     (isViewList)

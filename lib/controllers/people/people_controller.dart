@@ -8,6 +8,7 @@ import 'package:test_logrant/data/global_preferences.dart';
 import 'package:test_logrant/models/people_model.dart';
 import 'package:test_logrant/services/people/people_services.dart';
 import 'package:test_logrant/utils/my_utils.dart';
+import 'package:test_logrant/views/people/detail_person_view.dart';
 import 'package:test_logrant/widgets/shared/custom_simple_dialog.dart';
 
 class PeopleController extends GetxController{
@@ -105,6 +106,13 @@ class PeopleController extends GetxController{
   void goToProfileView(BuildContext context) => Navigator.pushNamed(
     context,
     '/profile_view'
+  );
+
+  void goTodetailPerson(BuildContext context, Person selectedPerson) => Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => DetailPersonView(person: selectedPerson)
+    )
   );
 
 
