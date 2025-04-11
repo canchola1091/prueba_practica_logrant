@@ -17,6 +17,13 @@ class PeopleView extends StatelessWidget {
       builder: (gx) {
         return Scaffold(
           appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white
+              ),
+              onPressed: () => gx.goToProfileView(context)
+            ),
             backgroundColor: Colors.teal,
             actions: [
               IconButton(

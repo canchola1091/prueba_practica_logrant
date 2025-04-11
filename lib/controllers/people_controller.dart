@@ -102,5 +102,10 @@ class PeopleController extends GetxController{
     '/favorite_person_view'
   );
 
+  void goToProfileView(BuildContext context) => Navigator.pushNamed(
+    context,
+    '/profile_view'
+  );
+
 
 }

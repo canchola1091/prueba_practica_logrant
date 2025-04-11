@@ -37,7 +37,7 @@ class CustomSimpleDialog {
           ]
         )
       ),
-      barrierDismissible: false
+      barrierDismissible: true
     );
   }
 
