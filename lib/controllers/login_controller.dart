@@ -7,7 +7,6 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:test_logrant/data/global_preferences.dart';
 import 'package:test_logrant/services/login_services.dart';
-import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/widgets/shared/custom_simple_dialog.dart';
 
 class LoginController  extends GetxController{
@@ -72,6 +71,14 @@ class LoginController  extends GetxController{
     
     if(resposnseLogin["success"]) {
       isLoading = false;
+      globalPrefs.setNameUser = resposnseLogin['body']['name'];
+      globalPrefs.setPhoneUser = resposnseLogin['body']['phone'];
+      globalPrefs.setEmailUser = resposnseLogin['body']['email'];
+      globalPrefs.setDateRegisterr = resposnseLogin['body']['createdAt'];
+      log('NOMBRE: ${globalPrefs.nameUser}');
+      log('TELEFONO: ${globalPrefs.phoneUser}');
+      log('EMAIL: ${globalPrefs.emailUser}');
+      log('DATE: ${globalPrefs.dateRegister}');
       update(['login_view']);
       _gotoPeopleView();
     } else {
@@ -90,8 +97,10 @@ class LoginController  extends GetxController{
     isLoading = true;
     update(['login_view']);
     Map<String, dynamic> resposnseRegister = await LoginServices.registerService(
-      emailRegCtrl.text.trim(),
-      passwordRegCtrl.text.trim()
+      name: nameCtrl.text.trim(),
+      phone: phoneCtrl.text.trim(),
+      email: emailRegCtrl.text.trim(),
+      password: passwordRegCtrl.text.trim()
     );
     log('RESPUESTA REGISTRO: $resposnseRegister');
     
@@ -103,12 +112,8 @@ class LoginController  extends GetxController{
         '${resposnseRegister['message']}\nInicia sesión por favor',
         isLogin: false,
         onAccept: () {
-          globalPrefs.setNameUser = nameCtrl.text.trim();
-          globalPrefs.setPhoneUser = phoneCtrl.text.trim();
           isLogin = true;
           Get.back();
-          MyUtils.msginfo('Nombre usuario: ${globalPrefs.nameUser}');
-          MyUtils.msginfo('Telefono usuario: ${globalPrefs.phoneUser}');
           update(['login_view']);
         }
       );
