@@ -39,6 +39,8 @@ En esta lista de personas al ser seleccionados se guardan en una lista de favori
 
 Se maneja un icono para cerrar la sesión.
 
+NOTA: ESTÁ APLICACIÓN ACTUALMENTE SOLO FUNCIONA PARA ANDROID.
+
 
 Estructura de la Aplicación
 CARPETAS
