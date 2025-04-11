@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:test_logrant/data/global_preferences.dart';
-import 'package:test_logrant/services/login_services.dart';
+import 'package:test_logrant/services/login/login_services.dart';
 import 'package:test_logrant/widgets/shared/custom_simple_dialog.dart';
 
 class LoginController  extends GetxController{

@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:test_logrant/data/global_preferences.dart';
 import 'package:test_logrant/models/people_model.dart';
-import 'package:test_logrant/services/people_services.dart';
+import 'package:test_logrant/services/people/people_services.dart';
 import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/widgets/shared/custom_simple_dialog.dart';
 

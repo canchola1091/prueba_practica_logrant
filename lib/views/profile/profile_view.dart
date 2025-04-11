@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:test_logrant/controllers/profile_controller.dart';
+import 'package:test_logrant/controllers/profile/profile_controller.dart';
 import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/widgets/shared/custom_simple_text.dart';
 

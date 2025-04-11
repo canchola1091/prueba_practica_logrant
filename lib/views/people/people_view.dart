@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import 'package:test_logrant/controllers/people_controller.dart';
+import 'package:test_logrant/controllers/people/people_controller.dart';
 import 'package:test_logrant/widgets/people/people_list.dart';
 
 class PeopleView extends StatelessWidget {

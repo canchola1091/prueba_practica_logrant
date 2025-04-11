@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import 'package:test_logrant/controllers/people_controller.dart';
+import 'package:test_logrant/controllers/people/people_controller.dart';
 
 class PeopleList extends StatelessWidget {
 

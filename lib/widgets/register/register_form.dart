@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import 'package:test_logrant/controllers/login_controller.dart';
+import 'package:test_logrant/controllers/login/login_controller.dart';
 import 'package:test_logrant/utils/my_utils.dart';
 import 'package:test_logrant/validations/validations.dart';
 import 'package:test_logrant/widgets/shared/custom_text_form_field.dart';
