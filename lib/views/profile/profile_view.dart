@@ -1,4 +1,5 @@
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -63,16 +64,18 @@ class ProfileView extends StatelessWidget {
   }
 
   Widget itemDataUser(String title, String subtitle, IconData icon) {
-    return ListTile(
-      leading: Icon(icon, size: 25),
-      title: CSimpleTxt(
-        fTxt: title,
-        fSize: 16.0,
-        fColor: Colors.teal,
-      ),
-      subtitle: CSimpleTxt(
-        fTxt: subtitle,
-        fSize: 15,
+    return FadeIn(
+      child: ListTile(
+        leading: Icon(icon, size: 25),
+        title: CSimpleTxt(
+          fTxt: title,
+          fSize: 16.0,
+          fColor: Colors.teal,
+        ),
+        subtitle: CSimpleTxt(
+          fTxt: subtitle,
+          fSize: 15,
+        ),
       ),
     );
   }
